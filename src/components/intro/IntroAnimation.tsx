@@ -1,12 +1,6 @@
-import {
-  AnimatePresence,
-  HTMLMotionProps,
-  motion,
-  MotionConfig,
-} from "framer-motion";
-import { HTMLAttributes, useEffect, useState } from "react";
+import { AnimatePresence, motion, MotionConfig } from "framer-motion";
+import { useEffect, useState } from "react";
 import { twMerge } from "tailwind-merge";
-import { Page } from "../ui/Page";
 import { HelloEng } from "./HelloEng";
 import { HelloHindi } from "./HelloHindi";
 import { HelloJp } from "./HelloJp";

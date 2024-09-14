@@ -1,4 +1,4 @@
-import { Code, Linkedin } from "lucide-react";
+import { Code } from "lucide-react";
 import { HTMLAttributes } from "react";
 import { twMerge } from "tailwind-merge";
 import { Framer } from "../../tech/icons/Framer";

@@ -1,5 +1,4 @@
 import { HTMLMotionProps, motion } from "framer-motion";
-import { HTMLAttributes } from "react";
 import { twMerge } from "tailwind-merge";
 
 export function TechTile({ className, ...props }: HTMLMotionProps<"div">) {

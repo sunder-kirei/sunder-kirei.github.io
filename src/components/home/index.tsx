@@ -33,17 +33,21 @@ export default function HomePage() {
             <div className="flex gap-x-4">
               <Link
                 className="ring-blue-600 text-blue-600"
-                href="/"
+                href="https://www.linkedin.com/in/sunder-kirei/"
                 title="LinkedIn"
               >
                 <Linkedin />
               </Link>
-              <Link className="ring-black text-black" href="/" title="GitHub">
+              <Link
+                className="ring-black text-black"
+                href="https://github.com/sunder-kirei"
+                title="GitHub"
+              >
                 <Github />
               </Link>
               <Link
                 className="ring-[#ed8796] text-[#ed8796]"
-                href="/"
+                href="/Resume.pdf"
                 title="Resume"
               >
                 <Pdf className="w-6" />

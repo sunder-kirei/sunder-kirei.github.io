@@ -1,18 +1,15 @@
 import { motion, useInView } from "framer-motion";
-import { AtSign, Handshake, Heart, Linkedin, Sparkles } from "lucide-react";
+import { AtSign, Handshake, Heart, Linkedin } from "lucide-react";
 import { HTMLAttributes, useEffect, useRef, useState } from "react";
 import { twMerge } from "tailwind-merge";
 import { Pdf } from "../home/Pdf";
-import { TechTile } from "../tech/components/TechTile";
 import { Github } from "../tech/icons/GitHub";
-import { Link } from "../ui/Link";
 import { Page } from "../ui/Page";
 import { ConnectDialog } from "./components/ConnectDialog";
 import { ConnectTile } from "./components/ConnectTile";
 import { Later } from "./components/Later";
 import { Leetcode } from "./components/Leetcode";
 import { Mate } from "./components/Mate";
-import { Spotify } from "./components/Spotify";
 
 function Socials({ className, ...props }: HTMLAttributes<HTMLElement>) {
   return (
@@ -22,23 +19,35 @@ function Socials({ className, ...props }: HTMLAttributes<HTMLElement>) {
         className
       )}
     >
-      <ConnectTile className="text-blue-600">
+      <ConnectTile
+        className="text-blue-600"
+        href="https://www.linkedin.com/in/sunder-kirei/"
+      >
         <Linkedin />
         <span>Linkedin</span>
       </ConnectTile>
-      <ConnectTile className="text-black">
+      <ConnectTile
+        className="text-black"
+        href="https://github.com/sunder-kirei"
+      >
         <Github className="size-8" />
         <span>GitHub</span>
       </ConnectTile>
-      <ConnectTile className="text-red-400">
+      <ConnectTile className="text-red-400" href="/Resume.pdf">
         <Pdf className="size-8" />
         <span>Resume</span>
       </ConnectTile>
-      <ConnectTile className="text-black">
+      <ConnectTile
+        className="text-black"
+        href="mailto:sunder-kirei@outlook.com"
+      >
         <AtSign className="size-8" />
         <span>Email</span>
       </ConnectTile>
-      <ConnectTile className="text-amber-600">
+      <ConnectTile
+        className="text-amber-600"
+        href="https://leetcode.com/sunder-kirei/"
+      >
         <Leetcode className="size-8" />
         <span>Leetcode</span>
       </ConnectTile>
@@ -120,15 +129,7 @@ export function ConnectPage({
         <div className="flex flex-col gap-4 w-full h-full lg:flex-row lg:items-center">
           <div className="h-full w-full flex flex-col gap-y-4 justify-center">
             <Socials />
-            {/* <a
-              href=""
-              className="h-20 w-fit p-4 flex items-center gap-x-4 rounded-full ring ring-green-300 mx-auto mt-4 spotify cursor-pointer"
-            >
-              <Spotify className="h-full w-fit aspect-square" />
-              <span className="after:transition-all after:duration-300 text-xl relative after:block after:absolute after:h-1 after:bg-primary after:w-0 ">
-                Have a listen😎
-              </span>
-            </a> */}
+
             <iframe
               style={{ borderRadius: "12px" }}
               src="https://open.spotify.com/embed/track/6bTCdqB1PN5J93hiiZvQzW?utm_source=generator&theme=0"

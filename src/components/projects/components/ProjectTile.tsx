@@ -1,4 +1,4 @@
-import { Github, Earth } from "lucide-react";
+import { Earth, Github } from "lucide-react";
 import { HTMLAttributes } from "react";
 import { twMerge } from "tailwind-merge";
 import { ProjectData } from "../../../data";

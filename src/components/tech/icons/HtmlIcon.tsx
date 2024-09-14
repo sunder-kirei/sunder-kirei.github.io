@@ -1,4 +1,3 @@
-import React from "react";
 import type { SVGProps } from "react";
 
 export function Html5(props: SVGProps<SVGSVGElement>) {

@@ -1,4 +1,3 @@
-import { Linkedin } from "lucide-react";
 import { AnchorHTMLAttributes } from "react";
 import { twMerge } from "tailwind-merge";
 import { Link } from "../../ui/Link";

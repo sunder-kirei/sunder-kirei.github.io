@@ -1,12 +1,10 @@
 import { useInView } from "framer-motion";
-import { Earth, Github, Sparkles } from "lucide-react";
-import { HTMLAttributes, useEffect, useMemo, useRef, useState } from "react";
+import { Sparkles } from "lucide-react";
+import { HTMLAttributes, useEffect, useRef, useState } from "react";
 import { twMerge } from "tailwind-merge";
-import { Link } from "../ui/Link";
+import { data } from "../../data";
 import { Page } from "../ui/Page";
-import { data, ProjectData } from "../../data";
 import { ProjectDialog } from "./components/ProjectDialog";
-import { Projects } from "./components/Projects";
 import { ProjectTile } from "./components/ProjectTile";
 
 const DELAY = 200;
@@ -83,6 +81,7 @@ export function ProjectsPage({
           <div className="h-full w-full rounded-md flex flex-wrap justify-center gap-x-4 gap-y-8">
             {data.map((item, idx) => (
               <ProjectTile
+                key={idx}
                 data={item}
                 onClick={() => {
                   setID(item.id);

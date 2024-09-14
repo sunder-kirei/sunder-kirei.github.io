@@ -1,9 +1,8 @@
 import { useInView } from "framer-motion";
-import { HandMetal, Handshake, House, Linkedin, Sparkles } from "lucide-react";
+import { Handshake, House, Sparkles } from "lucide-react";
 import {
   AnchorHTMLAttributes,
   HTMLAttributes,
-  HtmlHTMLAttributes,
   useEffect,
   useRef,
   useState,

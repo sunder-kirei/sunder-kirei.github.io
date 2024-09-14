@@ -25,7 +25,6 @@ import { Postgresql } from "./icons/Postgres";
 import { Powershell } from "./icons/Powershell";
 import { Prisma } from "./icons/Prisma";
 import { ProudIcon } from "./icons/ProudIcon";
-import { ReactIcon } from "./icons/ReactIcon";
 import { Scss } from "./icons/Scss";
 import { Sqlite } from "./icons/SQLite";
 import { TailwindCSS } from "./icons/TailwindCSS";
