@@ -15,7 +15,7 @@ function Socials({ className, ...props }: HTMLAttributes<HTMLElement>) {
   return (
     <div
       className={twMerge(
-        "h-fit w-full flex items-center flex-wrap justify-center gap-4 mt-16",
+        "h-fit w-full flex items-center flex-wrap justify-center gap-4 sm:mt-16",
         className
       )}
     >
@@ -127,7 +127,7 @@ export function ConnectPage({
           </span>
         </div>
         <div className="flex flex-col gap-4 w-full h-full lg:flex-row lg:items-center">
-          <div className="h-full w-full flex flex-col gap-y-4 justify-center">
+          <div className="h-full w-full flex flex-col gap-y-4 sm:justify-center">
             <Socials />
 
             <iframe
@@ -139,7 +139,7 @@ export function ConnectPage({
               allowFullScreen={false}
               allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
               loading="lazy"
-              className="w-96 mx-auto"
+              className="w-96 mx-auto max-w-[90%]"
             ></iframe>
           </div>
           <div className="my-8 lg:my-0 flex items-center gap-4 justify-center flex-wrap h-fit">

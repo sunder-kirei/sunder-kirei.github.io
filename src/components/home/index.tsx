@@ -63,7 +63,7 @@ export default function HomePage() {
             </div>
           </div>
           <div
-            className="aspect-square w-96 -z-10 rounded-full relative"
+            className="aspect-square w-96 max-w-[90%] -z-10 rounded-full relative"
             style={{
               backgroundImage: 'url("/assets/sunder-kirei.png")',
               backgroundSize: "contain",

@@ -18,7 +18,7 @@ function NavTile({
   return (
     <a
       className={twMerge(
-        "flex gap-x-2 items-center p-3 rounded-full transition-colors",
+        "flex gap-x-2 items-center p-2 sm:p-3 rounded-full transition-colors",
         active && "bg-primary",
         className
       )}
@@ -89,7 +89,7 @@ export function Nav({ className, ...props }: HTMLAttributes<HTMLElement>) {
 
       <NavBar
         className={twMerge(
-          "fixed bottom-4 bg-white ring ring-accent w-fit left-1/2 -translate-x-1/2 p-4 rounded-full",
+          "fixed bottom-4 bg-white ring ring-accent w-fit left-1/2 -translate-x-1/2 sm:p-4 p-3 rounded-full",
           isInView ? "opacity-0  translate-y-32 scale-0" : "scale-100"
         )}
       />
