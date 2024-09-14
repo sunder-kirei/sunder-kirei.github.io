@@ -44,7 +44,7 @@ function NavBar({ className, ...props }: HTMLAttributes<HTMLElement>) {
     return () => {
       window.removeEventListener("popstate", set);
     };
-  });
+  }, []);
 
   return (
     <nav
@@ -62,7 +62,7 @@ function NavBar({ className, ...props }: HTMLAttributes<HTMLElement>) {
         <Sparkles />
         Projects
       </NavTile>
-      <NavTile href="#connect" active={`#${link}` === "$connect"}>
+      <NavTile href="#connect" active={`#${link}` === "#connect"}>
         <Handshake />
         Connect
       </NavTile>

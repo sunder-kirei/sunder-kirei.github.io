@@ -1,4 +1,6 @@
+import { useInView } from "framer-motion";
 import { Github, Linkedin } from "lucide-react";
+import { useEffect, useRef } from "react";
 import { HelloHindi } from "../intro/HelloHindi";
 import { Nav } from "../layout/Nav";
 import { Link } from "../ui/Link";
@@ -7,8 +9,19 @@ import { Arrow } from "./Arrow";
 import { Pdf } from "./Pdf";
 
 export default function HomePage() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { amount: 0.2 });
+
+  useEffect(() => {
+    if (isInView) {
+      window.history.replaceState({}, "", "#home");
+      const popStateEvent = new PopStateEvent("popstate", { state: {} });
+      dispatchEvent(popStateEvent);
+    }
+  }, [isInView]);
+
   return (
-    <Page className="flex flex-col">
+    <Page className="flex flex-col" id="home" ref={ref}>
       <Nav />
       <section className="w-full p-4 flex flex-col lg:flex-row items-center gap-x-12 gap-y-24 justify-self-center my-auto lg:-translate-y-10">
         <div className="w-full flex flex-col items-center gap-y-2">

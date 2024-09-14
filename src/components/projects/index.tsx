@@ -2,9 +2,9 @@ import { useInView } from "framer-motion";
 import { Earth, Github, Sparkles } from "lucide-react";
 import { HTMLAttributes, useEffect, useMemo, useRef, useState } from "react";
 import { twMerge } from "tailwind-merge";
-import { Link } from "../components/ui/Link";
-import { Page } from "../components/ui/Page";
-import { data, ProjectData } from "../data";
+import { Link } from "../ui/Link";
+import { Page } from "../ui/Page";
+import { data, ProjectData } from "../../data";
 import { ProjectDialog } from "./components/ProjectDialog";
 import { Projects } from "./components/Projects";
 import { ProjectTile } from "./components/ProjectTile";
@@ -20,7 +20,15 @@ export function ProjectsPage({
   const isInView = useInView(ref, { amount: 0.2 });
   const headInView = useInView(headRef, { amount: 0.5, once: true });
 
-  const [id, setID] = useState<string | null>("test");
+  const [id, setID] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (isInView) {
+      window.history.replaceState({}, "", "#projects");
+      const popStateEvent = new PopStateEvent("popstate", { state: {} });
+      dispatchEvent(popStateEvent);
+    }
+  }, [isInView]);
 
   useEffect(() => {
     function clearID(event: KeyboardEvent) {
@@ -38,7 +46,7 @@ export function ProjectsPage({
       {
         <div
           className={twMerge(
-            "h-full w-full grid place-items-center fixed top-0 left-0 bg-primary/50 z-[1000] opacity-0 pointer-events-none transition-all duration-500",
+            "h-full w-full grid place-items-center fixed top-0 left-0 bg-primary/90 z-[1000] opacity-0 pointer-events-none transition-all duration-500",
             id ? "opacity-100 scale-100 pointer-events-auto" : "scale-0"
           )}
           onClick={() => {
@@ -52,6 +60,7 @@ export function ProjectsPage({
         className={twMerge("p-4 lg:mt-32 mt-16 lg:h-fit", className)}
         {...props}
         ref={ref}
+        id="projects"
       >
         <div
           className={twMerge(
@@ -80,7 +89,7 @@ export function ProjectsPage({
                 }}
                 className={twMerge(
                   "opacity-0 translate-y-full transition-all duration-500",
-                  isInView ? "opacity-100 translate-y-0 scale-100" : "scale-0"
+                  headInView ? "opacity-100 translate-y-0 scale-100" : "scale-0"
                 )}
                 style={{
                   transitionDelay: `${idx * DELAY}ms`,

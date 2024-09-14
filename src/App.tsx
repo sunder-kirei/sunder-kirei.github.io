@@ -7,7 +7,8 @@ import { IntroAnimation } from "./components/intro/IntroAnimation";
 import { Nav } from "./components/layout/Nav";
 import { TechPage } from "./components/tech";
 import { Page } from "./components/ui/Page";
-import { ProjectsPage } from "./projects";
+import { ProjectsPage } from "./components/projects";
+import { ConnectPage } from "./components/connect";
 
 function App() {
   return (
@@ -15,8 +16,7 @@ function App() {
       <HomePage />
       <TechPage />
       <ProjectsPage />
-      <Page />
-      <Page />
+      <ConnectPage />
     </>
   );
 }

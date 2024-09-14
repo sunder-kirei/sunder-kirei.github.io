@@ -54,7 +54,7 @@ export function IntroAnimation({ show = true }: Props) {
   return (
     <div
       className={twMerge(
-        "w-full h-full absolute top-0 left-0 z-[1000] grid place-items-center intro-gradient pointer-events-none opacity-0 transition-opacity duration-1000",
+        "w-full h-full absolute top-0 left-0 z-[10000] grid place-items-center intro-gradient pointer-events-none opacity-0 transition-opacity duration-1000",
         showIntro && "opacity-100 pointer-events-auto"
       )}
       onClick={(event) => {

@@ -1,7 +1,7 @@
 import { Github, Earth } from "lucide-react";
 import { HTMLAttributes } from "react";
 import { twMerge } from "tailwind-merge";
-import { ProjectData } from "../../data";
+import { ProjectData } from "../../../data";
 
 interface ProjectTileProps extends HTMLAttributes<HTMLElement> {
   data: ProjectData;

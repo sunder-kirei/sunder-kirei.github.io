@@ -2,6 +2,7 @@ import { useInView } from "framer-motion";
 import { HTMLAttributes, useRef } from "react";
 import { twMerge } from "tailwind-merge";
 import { Page } from "../ui/Page";
+import { TechTile } from "./components/TechTile";
 import { Bash } from "./icons/Bash";
 import { Cpp } from "./icons/Cpp";
 import { Css3 } from "./icons/CssIcon";
@@ -31,17 +32,6 @@ import { TailwindCSS } from "./icons/TailwindCSS";
 import { Typescript } from "./icons/Typescript";
 import { Zod } from "./icons/Zod";
 
-function TechTile({ className, ...props }: HTMLAttributes<HTMLElement>) {
-  return (
-    <div
-      className={twMerge(
-        "text-7xl w-full h-full bg-white rounded-md shadow-lg shadow-secondary p-4 grid place-items-center size-32",
-        className
-      )}
-      {...props}
-    />
-  );
-}
 const AMOUNT = 0.2;
 export function TechPage({ className, ...props }: HTMLAttributes<HTMLElement>) {
   const webRef = useRef(null);

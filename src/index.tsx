@@ -9,7 +9,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <>
-    <IntroAnimation show={false} />
+    <IntroAnimation show={true} />
     <App />
   </>
 );
