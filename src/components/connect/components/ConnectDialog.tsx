@@ -17,7 +17,7 @@ export function ConnectDialog({
   return (
     <div
       className={twMerge(
-        "max-w-4/5 w-fit h-4/5 bg-white rounded-md p-4 flex flex-col",
+        "max-w-[90%] w-fit h-fit bg-white rounded-md p-4 flex flex-col",
         className
       )}
       onClick={(e) => e.stopPropagation()}
@@ -58,7 +58,7 @@ export function ConnectDialog({
           GitHub Pages
         </ConnectTile>
       </div>
-      <ConnectTile className="mt-auto mx-auto">
+      <ConnectTile className="mx-auto mt-4">
         <Code />
         Source Code
       </ConnectTile>

@@ -29,7 +29,7 @@ export function ProjectDialog({ dirName }: Props) {
 
   return (
     <div
-      className="lg:flex w-4/5 max-w-screen-xl h-4/5 bg-white lg:overflow-hidden overflow-y-auto rounded-md"
+      className="lg:flex w-[90%] max-w-screen-xl h-4/5 bg-white lg:overflow-hidden overflow-y-auto rounded-md"
       onClick={(e) => e.stopPropagation()}
     >
       <div className="w-full aspect-video bg-black overflow-hidden">
