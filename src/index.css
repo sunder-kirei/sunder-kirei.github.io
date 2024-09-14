@@ -2,18 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  box-sizing: border-box;
+}
+
 html {
   @apply h-screen w-screen;
+  --primary: 334 65.3% 80.8%;
+  --accent: 212 65.9% 74.7%;
+  --font: 0 0% 15%;
+  --secondary: 288 74% 77%;
 }
 
 body {
-  @apply w-full h-full;
+  @apply w-full h-full text-font font-primary bg-background;
 }
 
 #root {
-  @apply h-full w-full;
+  @apply h-full w-full overflow-x-hidden;
 }
 
 .center {
   @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+}
+
+.intro-gradient {
+  background: rgb(238, 174, 202);
+  background: radial-gradient(
+    circle,
+    rgba(238, 174, 202, 1) 0%,
+    rgba(148, 187, 233, 1) 100%
+  );
 }

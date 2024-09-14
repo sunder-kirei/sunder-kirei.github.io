@@ -5,14 +5,22 @@ import styles from "./hello_eng.module.css";
 
 export function HelloEng({
   className,
+  play,
   ...props
-}: HTMLAttributes<SVGSVGElement>) {
-  useEffect(() => {
-    const svg = document.getElementById("hello_eng");
-    if (svg) {
-      svg.classList.add(styles["active"]);
-    }
-  });
+}: HTMLAttributes<SVGSVGElement> & { play: boolean }) {
+  // useEffect(() => {
+  //   const svg = document.getElementById("hello_eng");
+  //   if (svg) {
+  //     console.log("adding class");
+  //     svg.classList.add(styles["active"]);
+  //   }
+  //   return () => {
+  //     if (svg) {
+  //       console.log("removing class");
+  //       svg.classList.remove(styles["active"]);
+  //     }
+  //   };
+  // });
 
   return (
     <svg
@@ -21,7 +29,7 @@ export function HelloEng({
       viewBox="0 0 167.1 76.4"
       xmlns="http://www.w3.org/2000/svg"
       id="hello_eng"
-      className={twMerge("w-full h-full", className)}
+      className={twMerge(" w-full h-full", play && styles["active"], className)}
       {...props}
     >
       <g

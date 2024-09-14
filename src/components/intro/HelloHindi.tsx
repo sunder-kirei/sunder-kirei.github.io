@@ -4,15 +4,9 @@ import { twMerge } from "tailwind-merge";
 
 export function HelloHindi({
   className,
+  play,
   ...props
-}: HTMLAttributes<SVGSVGElement>) {
-  useEffect(() => {
-    const svg = document.getElementById("hello_hindi");
-    if (svg) {
-      svg.classList.add(styles["active"]);
-    }
-  });
-
+}: HTMLAttributes<SVGSVGElement> & { play: boolean }) {
   return (
     <svg
       width="273.7070007324219"
@@ -20,7 +14,7 @@ export function HelloHindi({
       viewBox="0 0 273.707 120.4"
       xmlns="http://www.w3.org/2000/svg"
       id="hello_hindi"
-      className={twMerge("h-full w-full", className)}
+      className={twMerge("w-full h-full", play && styles["active"], className)}
       {...props}
     >
       <g

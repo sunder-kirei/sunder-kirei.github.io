@@ -4,14 +4,15 @@ import { twMerge } from "tailwind-merge";
 
 export function HelloJp({
   className,
+  play,
   ...props
-}: HTMLAttributes<SVGSVGElement>) {
-  useEffect(() => {
-    const svg = document.getElementById("hello_jp");
-    if (svg) {
-      svg.classList.add(styles["active"]);
-    }
-  });
+}: HTMLAttributes<SVGSVGElement> & { play: boolean }) {
+  // useEffect(() => {
+  //   const svg = document.getElementById("hello_jp");
+  //   if (svg) {
+  //     svg.classList.add(styles["active"]);
+  //   }
+  // });
 
   return (
     <svg
@@ -20,7 +21,7 @@ export function HelloJp({
       viewBox="0 0 473.7 79.6"
       xmlns="http://www.w3.org/2000/svg"
       id="hello_jp"
-      className={twMerge("w-full h-full", className)}
+      className={twMerge("w-full h-full", play && styles["active"], className)}
       {...props}
     >
       <g
