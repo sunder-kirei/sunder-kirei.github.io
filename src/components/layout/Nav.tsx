@@ -78,7 +78,7 @@ export function Nav({ className, ...props }: HTMLAttributes<HTMLElement>) {
 
   return (
     <div
-      className={twMerge("w-full h-20 z-100", className)}
+      className={twMerge("w-full h-20 z-[1000]", className)}
       {...props}
       ref={ref}
     >

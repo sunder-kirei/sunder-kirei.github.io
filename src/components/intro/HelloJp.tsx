@@ -7,13 +7,6 @@ export function HelloJp({
   play,
   ...props
 }: HTMLAttributes<SVGSVGElement> & { play: boolean }) {
-  // useEffect(() => {
-  //   const svg = document.getElementById("hello_jp");
-  //   if (svg) {
-  //     svg.classList.add(styles["active"]);
-  //   }
-  // });
-
   return (
     <svg
       width="473.70001220703125"

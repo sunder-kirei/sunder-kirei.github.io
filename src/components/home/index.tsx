@@ -1,12 +1,14 @@
 import { Github, Linkedin } from "lucide-react";
 import { HelloHindi } from "../intro/HelloHindi";
 import { Nav } from "../layout/Nav";
+import { Link } from "../ui/Link";
 import { Page } from "../ui/Page";
 import { Arrow } from "./Arrow";
+import { Pdf } from "./Pdf";
 
 export default function HomePage() {
   return (
-    <Page className="flex flex-col h-fit lg:h-full">
+    <Page className="flex flex-col">
       <Nav />
       <section className="w-full p-4 flex flex-col lg:flex-row items-center gap-x-12 gap-y-24 justify-self-center my-auto lg:-translate-y-10">
         <div className="w-full flex flex-col items-center gap-y-2">
@@ -16,18 +18,23 @@ export default function HomePage() {
               I am <span className="text-accent">Sunder Kumar</span>
             </div>
             <div className="flex gap-x-4">
-              <a
-                className="px-4 py-2 rounded flex items-center gap-x-2 ring ring-blue-600 text-blue-600"
+              <Link
+                className="ring-blue-600 text-blue-600"
                 href="/"
+                title="LinkedIn"
               >
                 <Linkedin />
-              </a>
-              <a
-                className="px-4 py-2 rounded flex items-center gap-x-2 ring ring-black text-black"
-                href="/"
-              >
+              </Link>
+              <Link className="ring-black text-black" href="/" title="GitHub">
                 <Github />
-              </a>
+              </Link>
+              <Link
+                className="ring-[#ed8796] text-[#ed8796]"
+                href="/"
+                title="Resume"
+              >
+                <Pdf className="w-6" />
+              </Link>
             </div>
           </div>
         </div>

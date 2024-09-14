@@ -35,6 +35,7 @@ export function IntroAnimation({ show = true }: Props) {
     if (showIntro) {
       const TIME = 2000,
         COUNT = 6;
+      setIdx((prev) => (prev + 1) % COUNT);
       const interval = setInterval(() => {
         setIdx((prev) => (prev + 1) % COUNT);
       }, TIME);

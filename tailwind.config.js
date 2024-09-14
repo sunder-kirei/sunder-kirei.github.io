@@ -13,6 +13,7 @@ module.exports = {
       fontFamily: {
         handwriting: '"Dancing Script", cursive',
         primary: '"Pacifico", cursive',
+        md: '"SUSE", sans-serif',
       },
     },
   },
