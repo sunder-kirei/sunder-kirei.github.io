@@ -31,6 +31,7 @@ export function ProjectTile({
           src={imgSrc}
           className="w-full h-full object-contain rounded-md"
           title={data.title}
+          alt={data.title}
         />
       </div>
       <div className="w-4/5 mx-auto bg-white ring ring-accent rounded-full px-8 py-4 flex justify-between items-center">
