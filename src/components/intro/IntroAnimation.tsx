@@ -28,7 +28,7 @@ export function IntroAnimation({ show = true }: Props) {
   useEffect(() => {
     if (showIntro) {
       const TIME = 2000,
-        COUNT = 6;
+        COUNT = 4;
       setIdx((prev) => (prev + 1) % COUNT);
       const interval = setInterval(() => {
         setIdx((prev) => (prev + 1) % COUNT);
@@ -89,16 +89,6 @@ export function IntroAnimation({ show = true }: Props) {
             key="hindi"
           >
             <HelloHindi play={idx === 2} />
-          </motion.div>
-          <motion.div
-            className="size-64 center"
-            variants={variants}
-            exit="exit"
-            initial="initial"
-            animate="animate"
-            key="jp"
-          >
-            <HelloJp play={idx === 4} />
           </motion.div>
         </AnimatePresence>
       </MotionConfig>
