@@ -47,7 +47,7 @@ export default function HomePage() {
               </Link>
               <Link
                 className="ring-[#ed8796] text-[#ed8796]"
-                href="/Resume.pdf"
+                href="/assets/resume.pdf"
                 title="Resume"
               >
                 <Pdf className="w-6" />

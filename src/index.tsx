@@ -8,7 +8,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <>
-    <IntroAnimation show={true} />
+    <IntroAnimation show={false} />
     <App />
   </>
 );

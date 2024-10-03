@@ -1,15 +1,12 @@
-import { motion, useInView } from "framer-motion";
-import { AtSign, Handshake, Heart, Linkedin } from "lucide-react";
+import { useInView } from "framer-motion";
+import { AtSign, Handshake, Linkedin } from "lucide-react";
 import { HTMLAttributes, useEffect, useRef, useState } from "react";
 import { twMerge } from "tailwind-merge";
 import { Pdf } from "../home/Pdf";
 import { Github } from "../tech/icons/GitHub";
 import { Page } from "../ui/Page";
-import { ConnectDialog } from "./components/ConnectDialog";
 import { ConnectTile } from "./components/ConnectTile";
-import { Later } from "./components/Later";
 import { Leetcode } from "./components/Leetcode";
-import { Mate } from "./components/Mate";
 
 function Socials({ className, ...props }: HTMLAttributes<HTMLElement>) {
   return (
@@ -89,85 +86,50 @@ export function ConnectPage({
   }, []);
 
   return (
-    <>
-      {
-        <div
-          className={twMerge(
-            "h-full w-full grid place-items-center fixed top-0 left-0 bg-primary/90 z-[1000] opacity-0 pointer-events-none transition-all duration-500",
-            show ? "opacity-100 scale-100 pointer-events-auto" : "scale-0"
-          )}
-          onClick={() => {
-            setShow(false);
-          }}
-        >
-          <ConnectDialog />
-        </div>
-      }
-      <Page
-        className={twMerge("p-4 lg:mt-32 mt-16 lg:flex lg:flex-col", className)}
-        {...props}
-        ref={ref}
-        id="connect"
+    <Page
+      className={twMerge(
+        "p-4 lg:mt-32 mt-16 lg:flex lg:flex-col pb-20 min-h-screen",
+        className
+      )}
+      {...props}
+      ref={ref}
+      id="connect"
+    >
+      <div
+        className={twMerge(
+          "mb-8 w-fit text-5xl mx-auto flex items-center gap-x-4 transition-all duration-500 opacity-0 translate-y-full",
+          headInView ? "opacity-100 scale-100 translate-y-0" : "scale-0"
+        )}
+        ref={headRef}
       >
-        <div
+        <Handshake className="size-12" />
+        <span
           className={twMerge(
-            "mb-8 w-fit text-5xl mx-auto flex items-center gap-x-4 transition-all duration-500 opacity-0 translate-y-full",
-            headInView ? "opacity-100 scale-100 translate-y-0" : "scale-0"
+            "after:block after:w-0 after:transition-all after:duration-500 after:h-2 after:bg-primary relative after:absolute after:-bottom-3 after:-z-10",
+            headInView && "after:w-full"
           )}
-          ref={headRef}
         >
-          <Handshake className="size-12" />
-          <span
-            className={twMerge(
-              "after:block after:w-0 after:transition-all after:duration-500 after:h-2 after:bg-primary relative after:absolute after:-bottom-3 after:-z-10",
-              headInView && "after:w-full"
-            )}
-          >
-            Connect
-          </span>
-        </div>
-        <div className="flex flex-col gap-4 w-full h-full lg:flex-row lg:items-center">
-          <div className="h-full w-full flex flex-col gap-y-4 sm:justify-center">
-            <Socials />
+          Connect
+        </span>
+      </div>
+      <div className="flex flex-col gap-4 w-full h-full lg:flex-row lg:items-center">
+        <div className="h-full w-full flex flex-col gap-8 sm:justify-center">
+          <Socials />
 
-            <iframe
-              style={{ borderRadius: "12px" }}
-              src="https://open.spotify.com/embed/track/6bTCdqB1PN5J93hiiZvQzW?utm_source=generator&theme=0"
-              width="100%"
-              height="152"
-              frameBorder="0"
-              allowFullScreen={false}
-              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-              loading="lazy"
-              className="w-96 mx-auto max-w-[90%]"
-            ></iframe>
-          </div>
-          <div className="my-8 lg:my-0 flex items-center gap-4 justify-center flex-wrap h-fit">
-            <Later
-              play={laterInView}
-              ref={laterRef}
-              className="w-64 h-fit my-2"
-            />
-            <Mate play={mateInView} ref={mateRef} className="w-64 h-fit my-2" />
-            <div className="size-44 text-9xl grid place-items-center">🤠</div>
-          </div>
+          <iframe
+            style={{ borderRadius: "12px" }}
+            src="https://open.spotify.com/embed/track/6bTCdqB1PN5J93hiiZvQzW?utm_source=generator&theme=0"
+            width="100%"
+            height="152"
+            frameBorder="0"
+            allowFullScreen={false}
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"
+            className="w-96 mx-auto max-w-[90%]"
+          ></iframe>
         </div>
-        <motion.button
-          whileHover={{
-            scale: 1.2,
-          }}
-          whileTap={{
-            scale: 1,
-          }}
-          onClick={() => {
-            setShow(true);
-          }}
-          className="w-fit h-fit p-4 gap-x-4 mx-auto lg:mx-0 bg-white ring ring-primary mb-24 lg:mb-0 rounded-md flex flex-row items-center text-xl"
-        >
-          <Heart className="fill-red-500 text-red-500" />
-          You like, me happy 🫠
-        </motion.button>
-      </Page>
-    </>
+        <div className="my-8 lg:my-0 flex items-center gap-4 justify-center flex-wrap h-fit"></div>
+      </div>
+    </Page>
   );
 }
