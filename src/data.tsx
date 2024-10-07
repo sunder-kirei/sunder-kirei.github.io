@@ -46,13 +46,13 @@ export const projectData: ProjectData[] = [
       "/video-conference/imgs/home.png",
     ],
     tech: [
-      <TechTile className="size-24 shadow-blue-300">
+      <TechTile className="size-12 p-2 shadow-blue-300">
         <ReactIcon className="size-full" />
       </TechTile>,
-      <TechTile className="size-24 shadow-black">
+      <TechTile className="size-12 p-2 shadow-black">
         <Express className="size-full" />
       </TechTile>,
-      <TechTile className="size-24 shadow-blue-500">
+      <TechTile className="size-12 p-2 shadow-blue-500">
         <Docker className="size-full" />
       </TechTile>,
     ],
@@ -71,10 +71,10 @@ export const projectData: ProjectData[] = [
     ],
     bgColor: "black",
     tech: [
-      <TechTile className="size-24 shadow-black">
+      <TechTile className="size-12 p-2 shadow-black">
         <Nextjs className="size-full" />
       </TechTile>,
-      <TechTile className="size-24 shadow-blue-500">
+      <TechTile className="size-12 p-2 shadow-blue-500">
         <TailwindCSS className="size-full" />
       </TechTile>,
     ],
@@ -95,13 +95,13 @@ export const projectData: ProjectData[] = [
     ],
     bgColor: "black",
     tech: [
-      <TechTile className="size-24 shadow-black">
+      <TechTile className="size-12 p-2 shadow-black">
         <Nextjs className="size-full" />
       </TechTile>,
-      <TechTile className="size-24 shadow-green-300">
+      <TechTile className="size-12 p-2 shadow-green-300">
         <Prisma className="size-full" />
       </TechTile>,
-      <TechTile className="size-24 shadow-purple-300">
+      <TechTile className="size-12 p-2 shadow-purple-300">
         <Redux className="size-full" />
       </TechTile>,
     ],
@@ -119,10 +119,10 @@ export const projectData: ProjectData[] = [
     isMobile: true,
     bgColor: "black",
     tech: [
-      <TechTile className="size-24 shadow-blue-600">
+      <TechTile className="size-12 p-2 shadow-blue-600">
         <Flutter className="size-full" />
       </TechTile>,
-      <TechTile className="size-24 shadow-amber-300">
+      <TechTile className="size-12 p-2 shadow-amber-300">
         <Firebase className="size-full" />
       </TechTile>,
     ],
@@ -141,13 +141,13 @@ export const projectData: ProjectData[] = [
     isMobile: true,
     bgColor: "black",
     tech: [
-      <TechTile className="size-24 shadow-blue-600">
+      <TechTile className="size-12 p-2 shadow-blue-600">
         <Flutter className="size-full" />
       </TechTile>,
-      <TechTile className="size-24 shadow-black">
+      <TechTile className="size-12 p-2 shadow-black">
         <Express className="size-full" />
       </TechTile>,
-      <TechTile className="size-24 shadow-blue-300">
+      <TechTile className="size-12 p-2 shadow-blue-300">
         <Sqlite className="size-full" />
       </TechTile>,
     ],

@@ -44,3 +44,7 @@ body {
 .tech-stack:hover > div {
   @apply translate-y-0;
 }
+
+.tech-stack:hover > img {
+  @apply scale-110;
+}
