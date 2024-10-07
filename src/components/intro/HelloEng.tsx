@@ -7,20 +7,6 @@ export function HelloEng({
   play,
   ...props
 }: HTMLAttributes<SVGSVGElement> & { play: boolean }) {
-  // useEffect(() => {
-  //   const svg = document.getElementById("hello_eng");
-  //   if (svg) {
-  //     console.log("adding class");
-  //     svg.classList.add(styles["active"]);
-  //   }
-  //   return () => {
-  //     if (svg) {
-  //       console.log("removing class");
-  //       svg.classList.remove(styles["active"]);
-  //     }
-  //   };
-  // });
-
   return (
     <svg
       width="167.10000610351562"

@@ -11,7 +11,6 @@ export function ProjectDialog({ project }: Props) {
   const [markdownContent, setMarkdownContent] = useState("");
   const filePath = `/${project?.github}/README.md`;
 
-  console.log(filePath);
   useEffect(() => {
     const fetchMarkdown = async () => {
       try {
@@ -22,12 +21,12 @@ export function ProjectDialog({ project }: Props) {
         console.error("Error fetching Markdown:", error);
       }
     };
-    if (filePath) {
+    if (project) {
       fetchMarkdown();
     } else {
       setMarkdownContent("");
     }
-  }, [filePath]);
+  }, [project, filePath]);
 
   return (
     <div
