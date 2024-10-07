@@ -7,6 +7,7 @@ import { Link } from "../ui/Link";
 import { Page } from "../ui/Page";
 import { Arrow } from "./Arrow";
 import { Pdf } from "./Pdf";
+import { contactData } from "../../data";
 
 export default function HomePage() {
   const ref = useRef(null);
@@ -32,22 +33,22 @@ export default function HomePage() {
             </div>
             <div className="flex gap-x-4">
               <Link
-                className="ring-blue-600 text-blue-600"
-                href="https://www.linkedin.com/in/sunder-kirei/"
+                className="transition-all hover:scale-110 duration-300 ring-blue-600 text-blue-600"
+                href={contactData.linkedIn}
                 title="LinkedIn"
               >
                 <Linkedin />
               </Link>
               <Link
-                className="ring-black text-black"
-                href="https://github.com/sunder-kirei"
+                className="transition-all hover:scale-110 duration-300 ring-black text-black"
+                href={contactData.github}
                 title="GitHub"
               >
                 <Github />
               </Link>
               <Link
-                className="ring-[#ed8796] text-[#ed8796]"
-                href="/assets/resume.pdf"
+                className="transition-all hover:scale-110 duration-300 ring-[#ed8796] text-[#ed8796]"
+                href={contactData.resume}
                 title="Resume"
               >
                 <Pdf className="w-6" />

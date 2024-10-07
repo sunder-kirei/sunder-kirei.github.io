@@ -5,6 +5,7 @@
 * {
   box-sizing: border-box;
   scroll-behavior: smooth;
+  @apply scrollbar-thin;
 }
 
 html {
@@ -38,4 +39,8 @@ body {
 
 .spotify:hover span:after {
   @apply w-full;
+}
+
+.tech-stack:hover > div {
+  @apply translate-y-0;
 }

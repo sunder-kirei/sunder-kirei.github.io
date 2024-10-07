@@ -7,44 +7,33 @@ import { Github } from "../tech/icons/GitHub";
 import { Page } from "../ui/Page";
 import { ConnectTile } from "./components/ConnectTile";
 import { Leetcode } from "./components/Leetcode";
+import { contactData } from "../../data";
 
 function Socials({ className, ...props }: HTMLAttributes<HTMLElement>) {
   return (
     <div
       className={twMerge(
-        "h-fit w-full flex items-center flex-wrap justify-center gap-4 sm:mt-16",
+        "h-fit w-full max-w-2xl mx-auto flex items-center flex-wrap justify-center gap-4",
         className
       )}
     >
-      <ConnectTile
-        className="text-blue-600"
-        href="https://www.linkedin.com/in/sunder-kirei/"
-      >
+      <ConnectTile className="text-blue-600" href={contactData.linkedIn}>
         <Linkedin />
         <span>Linkedin</span>
       </ConnectTile>
-      <ConnectTile
-        className="text-black"
-        href="https://github.com/sunder-kirei"
-      >
+      <ConnectTile className="text-black" href={contactData.github}>
         <Github className="size-8" />
         <span>GitHub</span>
       </ConnectTile>
-      <ConnectTile className="text-red-400" href="/Resume.pdf">
+      <ConnectTile className="text-red-400" href={contactData.resume}>
         <Pdf className="size-8" />
         <span>Resume</span>
       </ConnectTile>
-      <ConnectTile
-        className="text-black"
-        href="mailto:sunder-kirei@outlook.com"
-      >
+      <ConnectTile className="text-black" href={contactData.email}>
         <AtSign className="size-8" />
         <span>Email</span>
       </ConnectTile>
-      <ConnectTile
-        className="text-amber-600"
-        href="https://leetcode.com/sunder-kirei/"
-      >
+      <ConnectTile className="text-amber-600" href={contactData.leetcode}>
         <Leetcode className="size-8" />
         <span>Leetcode</span>
       </ConnectTile>
@@ -88,7 +77,7 @@ export function ConnectPage({
   return (
     <Page
       className={twMerge(
-        "p-4 lg:mt-32 mt-16 lg:flex lg:flex-col pb-20 min-h-screen",
+        "p-4 lg:mt-32 mt-16 lg:flex lg:flex-col pb-28 sm:pb-20 min-h-screen",
         className
       )}
       {...props}
@@ -97,7 +86,7 @@ export function ConnectPage({
     >
       <div
         className={twMerge(
-          "mb-8 w-fit text-5xl mx-auto flex items-center gap-x-4 transition-all duration-500 opacity-0 translate-y-full",
+          "w-fit text-5xl mx-auto flex items-center gap-x-4 transition-all duration-500 opacity-0 translate-y-full mb-8 sm:mb-0",
           headInView ? "opacity-100 scale-100 translate-y-0" : "scale-0"
         )}
         ref={headRef}
@@ -112,23 +101,22 @@ export function ConnectPage({
           Connect
         </span>
       </div>
-      <div className="flex flex-col gap-4 w-full h-full lg:flex-row lg:items-center">
+      <div className="flex flex-col gap-4 w-full h-full lg:flex-row items-center">
         <div className="h-full w-full flex flex-col gap-8 sm:justify-center">
           <Socials />
 
           <iframe
+            title="spotify"
             style={{ borderRadius: "12px" }}
             src="https://open.spotify.com/embed/track/6bTCdqB1PN5J93hiiZvQzW?utm_source=generator&theme=0"
             width="100%"
             height="152"
-            frameBorder="0"
             allowFullScreen={false}
             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
             loading="lazy"
             className="w-96 mx-auto max-w-[90%]"
-          ></iframe>
+          />
         </div>
-        <div className="my-8 lg:my-0 flex items-center gap-4 justify-center flex-wrap h-fit"></div>
       </div>
     </Page>
   );

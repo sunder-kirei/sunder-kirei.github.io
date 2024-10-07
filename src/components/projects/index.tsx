@@ -2,7 +2,7 @@ import { useInView } from "framer-motion";
 import { Sparkles } from "lucide-react";
 import { HTMLAttributes, useEffect, useRef, useState } from "react";
 import { twMerge } from "tailwind-merge";
-import { data } from "../../data";
+import { projectData, ProjectData } from "../../data";
 import { Page } from "../ui/Page";
 import { ProjectDialog } from "./components/ProjectDialog";
 import { ProjectTile } from "./components/ProjectTile";
@@ -18,7 +18,7 @@ export function ProjectsPage({
   const isInView = useInView(ref, { amount: 0.2 });
   const headInView = useInView(headRef, { amount: 0.5, once: true });
 
-  const [id, setID] = useState<string | null>(null);
+  const [project, setProject] = useState<ProjectData | null>(null);
 
   useEffect(() => {
     if (isInView) {
@@ -31,7 +31,7 @@ export function ProjectsPage({
   useEffect(() => {
     function clearID(event: KeyboardEvent) {
       if (event.key === "Escape") {
-        setID(null);
+        setProject(null);
       }
     }
     window.addEventListener("keydown", clearID);
@@ -45,13 +45,13 @@ export function ProjectsPage({
         <div
           className={twMerge(
             "h-full w-full grid place-items-center fixed top-0 left-0 bg-primary/90 z-[1000] opacity-0 pointer-events-none transition-all duration-500",
-            id ? "opacity-100 scale-100 pointer-events-auto" : "scale-0"
+            project ? "opacity-100 scale-100 pointer-events-auto" : "scale-0"
           )}
           onClick={() => {
-            setID(null);
+            setProject(null);
           }}
         >
-          <ProjectDialog dirName={id ?? undefined} />
+          <ProjectDialog project={project} />
         </div>
       }
       <Page
@@ -79,12 +79,12 @@ export function ProjectsPage({
         </div>
         <div className="w-full flex flex-wrap mt-16">
           <div className="h-full w-full rounded-md flex flex-wrap justify-center gap-x-4 gap-y-8">
-            {data.map((item, idx) => (
+            {projectData.map((item, idx) => (
               <ProjectTile
                 key={idx}
                 data={item}
                 onClick={() => {
-                  setID(item.id);
+                  setProject(item);
                 }}
                 className={twMerge(
                   "opacity-0 translate-y-full transition-all duration-500",

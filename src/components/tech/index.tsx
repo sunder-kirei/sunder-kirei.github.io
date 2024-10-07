@@ -1,5 +1,5 @@
 import { useInView } from "framer-motion";
-import { HTMLAttributes, useRef } from "react";
+import { HTMLAttributes, useEffect, useMemo, useRef, useState } from "react";
 import { twMerge } from "tailwind-merge";
 import { Page } from "../ui/Page";
 import { TechTile } from "./components/TechTile";
@@ -30,11 +30,60 @@ import { Sqlite } from "./icons/SQLite";
 import { TailwindCSS } from "./icons/TailwindCSS";
 import { Typescript } from "./icons/Typescript";
 import { Zod } from "./icons/Zod";
+import { Redux } from "./icons/Redux";
 
 const AMOUNT = 0.2;
 export function TechPage({ className, ...props }: HTMLAttributes<HTMLElement>) {
   const webRef = useRef(null);
   const webInView = useInView(webRef, { amount: AMOUNT, once: true });
+  const tiles = useMemo(
+    () => [
+      <Html5 />,
+      <Css3 />,
+      <Javascript />,
+      <Typescript />,
+      <Nextjs />,
+      <TailwindCSS />,
+      <Redux />,
+      <Express />,
+      <Docker />,
+      <Firebase />,
+
+      <Linux />,
+      <Nodejs />,
+      <Scss />,
+      <Framer />,
+      <Sqlite />,
+      <GitIcon />,
+      <Github />,
+      <Mongodb />,
+      <Mongoose />,
+      <MySQL />,
+      <Postgresql />,
+      <Prisma />,
+      <Zod />,
+      <Bash />,
+      <Powershell />,
+      <Cpp />,
+      <Flutter />,
+    ],
+    []
+  );
+  const [isSm, setIsSm] = useState(false);
+
+  useEffect(() => {
+    function resizeHandler() {
+      if (window.innerWidth > 640) {
+        setIsSm(false);
+      } else {
+        setIsSm(true);
+      }
+    }
+    window.addEventListener("resize", resizeHandler);
+    resizeHandler();
+
+    return () => window.removeEventListener("resize", resizeHandler);
+  }, [setIsSm]);
 
   return (
     <Page
@@ -54,84 +103,11 @@ export function TechPage({ className, ...props }: HTMLAttributes<HTMLElement>) {
           webInView ? "opacity-100 translate-y-0 scale-100" : "scale-0"
         )}
       >
-        <TechTile title="HTML5">
-          <Html5 />
-        </TechTile>
-        <TechTile title="CSS3">
-          <Css3 />
-        </TechTile>
-        <TechTile title="Javascript">
-          <Javascript />
-        </TechTile>
-        <TechTile title="Typescript">
-          <Typescript />
-        </TechTile>
-        <TechTile title="NextJS">
-          <Nextjs />
-        </TechTile>
-        <TechTile title="NodeJS">
-          <Nodejs />
-        </TechTile>
-        <TechTile title="ExpressJS">
-          <Express />
-        </TechTile>
-        <TechTile title="SCSS">
-          <Scss />
-        </TechTile>
-        <TechTile title="TailwindCSS">
-          <TailwindCSS />
-        </TechTile>
-        <TechTile title="Framer-motion">
-          <Framer />
-        </TechTile>
-        <TechTile title="SQLite">
-          <Sqlite />
-        </TechTile>
-        <TechTile title="Firebase">
-          <Firebase />
-        </TechTile>
-        <TechTile title="Docker">
-          <Docker />
-        </TechTile>
-        <TechTile title="Git">
-          <GitIcon />
-        </TechTile>
-        <TechTile title="GitHub">
-          <Github />
-        </TechTile>
-        <TechTile title="MongoDB">
-          <Mongodb />
-        </TechTile>
-        <TechTile title="Mongoose">
-          <Mongoose />
-        </TechTile>
-        <TechTile title="MySQL">
-          <MySQL />
-        </TechTile>
-        <TechTile title="PostgreSQL">
-          <Postgresql />
-        </TechTile>
-        <TechTile title="Prisma ORM">
-          <Prisma />
-        </TechTile>
-        <TechTile title="Zod">
-          <Zod />
-        </TechTile>
-        <TechTile title="Linux">
-          <Linux />
-        </TechTile>
-        <TechTile title="Bash">
-          <Bash />
-        </TechTile>
-        <TechTile title="Powershell">
-          <Powershell />
-        </TechTile>
-        <TechTile title="C++">
-          <Cpp />
-        </TechTile>
-        <TechTile title="Flutter">
-          <Flutter />
-        </TechTile>
+        {(isSm ? tiles.slice(0, 10) : tiles).map((item, idx) => (
+          <TechTile key={idx} title={item.key?.toString()}>
+            {item}
+          </TechTile>
+        ))}
       </div>
     </Page>
   );
