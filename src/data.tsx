@@ -1,16 +1,14 @@
-import { JsxElement } from "typescript";
 import { TechTile } from "./components/tech/components/TechTile";
 import { Docker } from "./components/tech/icons/Docker";
-import { ReactIcon } from "./components/tech/icons/ReactIcon";
 import { Express } from "./components/tech/icons/Express";
-import { Nextjs } from "./components/tech/icons/NextJS";
-import { TailwindCSS } from "./components/tech/icons/TailwindCSS";
-import { Prisma } from "./components/tech/icons/Prisma";
-import { MySQL } from "./components/tech/icons/MySQL";
-import { Redux } from "./components/tech/icons/Redux";
-import { Flutter } from "./components/tech/icons/Flutter";
 import { Firebase } from "./components/tech/icons/Firebase";
+import { Flutter } from "./components/tech/icons/Flutter";
+import { Nextjs } from "./components/tech/icons/NextJS";
+import { Prisma } from "./components/tech/icons/Prisma";
+import { ReactIcon } from "./components/tech/icons/ReactIcon";
+import { Redux } from "./components/tech/icons/Redux";
 import { Sqlite } from "./components/tech/icons/SQLite";
+import { TailwindCSS } from "./components/tech/icons/TailwindCSS";
 
 export interface ProjectData {
   title: string;
@@ -34,7 +32,7 @@ export const contactData: ContactData = {
   linkedIn: "https://www.linkedin.com/in/sunder-kirei/",
   github: "https://github.com/sunder-kirei",
   email: "mailto:sunder-kirei@outlook.com",
-  resume: "/assets/resume.pdf",
+  resume: "/assets/Sunder_Resume.pdf",
   leetcode: "https://leetcode.com/sunder-kirei/",
 };
 

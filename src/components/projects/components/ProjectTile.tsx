@@ -8,6 +8,7 @@ import { Nextjs } from "../../tech/icons/NextJS";
 import { ReactIcon } from "../../tech/icons/ReactIcon";
 import { Express } from "../../tech/icons/Express";
 import { Docker } from "../../tech/icons/Docker";
+import { Link } from "../../ui/Link";
 
 interface ProjectTileProps extends HTMLAttributes<HTMLElement> {
   data: ProjectData;
@@ -56,15 +57,17 @@ export function ProjectTile({
       <div className="w-4/5 mx-auto bg-white ring ring-accent rounded-full px-8 py-4 flex justify-between items-center font-md font-semibold">
         <span className="text-xl">{data.title}</span>
         <span className="flex items-center justify-center gap-x-4">
-          <a href={`${process.env.REACT_APP_GITHUB_BASE}/${data.github}`}>
+          <Link href={`${process.env.REACT_APP_GITHUB_BASE}/${data.github}`}>
             <Github className="text-black" />
-          </a>
-          <a
+          </Link>
+          <Link
             href={data.live}
             className={twMerge(data.live ? "text-blue-600" : "text-gray-400")}
+            target="_blank"
+            rel="noreferrer"
           >
             <Earth />
-          </a>
+          </Link>
         </span>
       </div>
     </div>

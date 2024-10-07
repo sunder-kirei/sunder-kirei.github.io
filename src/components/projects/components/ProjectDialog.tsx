@@ -36,7 +36,7 @@ export function ProjectDialog({ project }: Props) {
       <div className="w-full aspect-video overflow-hidden">
         {project && (
           <Carousel
-            className="rounded-md"
+            className="rounded-md rounded-tr-none rounded-br-none"
             images={project.imgs}
             bgColor={project.bgColor}
           />
