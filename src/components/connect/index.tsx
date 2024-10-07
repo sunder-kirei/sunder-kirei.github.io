@@ -86,7 +86,7 @@ export function ConnectPage({
     >
       <div
         className={twMerge(
-          "w-fit text-5xl mx-auto flex items-center gap-x-4 transition-all duration-500 opacity-0 translate-y-full mb-8 sm:mb-0",
+          "w-fit text-5xl mx-auto flex items-center gap-x-4 transition-all duration-500 opacity-0 translate-y-full mb-8 lg:mb-0",
           headInView ? "opacity-100 scale-100 translate-y-0" : "scale-0"
         )}
         ref={headRef}
