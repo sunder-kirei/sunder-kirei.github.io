@@ -3,6 +3,7 @@ import { Docker } from "./components/tech/icons/Docker";
 import { Express } from "./components/tech/icons/Express";
 import { Firebase } from "./components/tech/icons/Firebase";
 import { Flutter } from "./components/tech/icons/Flutter";
+import { HaProxy } from "./components/tech/icons/HaProxy";
 import { Nextjs } from "./components/tech/icons/NextJS";
 import { Prisma } from "./components/tech/icons/Prisma";
 import { ReactIcon } from "./components/tech/icons/ReactIcon";
@@ -54,6 +55,9 @@ export const projectData: ProjectData[] = [
       </TechTile>,
       <TechTile className="size-12 p-2 shadow-blue-500">
         <Docker className="size-full" />
+      </TechTile>,
+      <TechTile className="size-12 shadow-blue-800 p-0 overflow-hidden">
+        <HaProxy />
       </TechTile>,
     ],
   },
