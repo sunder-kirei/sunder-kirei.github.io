@@ -1,9 +1,11 @@
 import { TechTile } from "./components/tech/components/TechTile";
+import { Cloudinary } from "./components/tech/icons/Cloudinary";
 import { Docker } from "./components/tech/icons/Docker";
 import { Express } from "./components/tech/icons/Express";
 import { Firebase } from "./components/tech/icons/Firebase";
 import { Flutter } from "./components/tech/icons/Flutter";
 import { HaProxy } from "./components/tech/icons/HaProxy";
+import { Mongodb } from "./components/tech/icons/MongoDB";
 import { Nextjs } from "./components/tech/icons/NextJS";
 import { Prisma } from "./components/tech/icons/Prisma";
 import { ReactIcon } from "./components/tech/icons/ReactIcon";
@@ -38,6 +40,39 @@ export const contactData: ContactData = {
 };
 
 export const projectData: ProjectData[] = [
+  {
+    github: "code-engine-client",
+    title: "Code Engine Client",
+    live: "https://code-engine-client.vercel.app/",
+    imgs: [
+      "/code-engine-client/imgs/landing.png",
+      "/code-engine-client/imgs/dashboard.png",
+      "/code-engine-client/imgs/note.png",
+      "/code-engine-client/imgs/code.png",
+      "/code-engine-client/imgs/nav.png",
+      "/code-engine-client/imgs/profile.png",
+    ],
+    tech: [
+      <TechTile className="size-12 p-2 shadow-blue-300">
+        <Nextjs className="size-full" />
+      </TechTile>,
+      <TechTile className="size-12 p-2 shadow-black">
+        <TailwindCSS className="size-full" />
+      </TechTile>,
+      <TechTile className="size-12 p-2 shadow-black">
+        <Redux className="size-full" />
+      </TechTile>,
+      <TechTile className="size-12 p-2 shadow-black">
+        <Prisma className="size-full" />
+      </TechTile>,
+      <TechTile className="size-12 p-2 shadow-black">
+        <Cloudinary className="size-full" />
+      </TechTile>,
+      <TechTile className="size-12 p-2 shadow-black">
+        <Mongodb className="size-full" />
+      </TechTile>,
+    ],
+  },
   {
     github: "video-conference",
     title: "SFU Video Conferencing",
