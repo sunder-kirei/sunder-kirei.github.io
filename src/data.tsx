@@ -5,13 +5,17 @@ import { Express } from "./components/tech/icons/Express";
 import { Firebase } from "./components/tech/icons/Firebase";
 import { Flutter } from "./components/tech/icons/Flutter";
 import { HaProxy } from "./components/tech/icons/HaProxy";
+import { Kafka } from "./components/tech/icons/Kafka";
 import { Mongodb } from "./components/tech/icons/MongoDB";
 import { Nextjs } from "./components/tech/icons/NextJS";
+import { Nodejs } from "./components/tech/icons/Node";
 import { Prisma } from "./components/tech/icons/Prisma";
 import { ReactIcon } from "./components/tech/icons/ReactIcon";
+import { Redis } from "./components/tech/icons/Redis";
 import { Redux } from "./components/tech/icons/Redux";
 import { Sqlite } from "./components/tech/icons/SQLite";
 import { TailwindCSS } from "./components/tech/icons/TailwindCSS";
+import { Zod } from "./components/tech/icons/Zod";
 
 export interface ProjectData {
   title: string;
@@ -53,7 +57,7 @@ export const projectData: ProjectData[] = [
       "/code-engine-client/imgs/profile.png",
     ],
     tech: [
-      <TechTile className="size-12 p-2 shadow-blue-300">
+      <TechTile className="size-12 p-2 shadow-black">
         <Nextjs className="size-full" />
       </TechTile>,
       <TechTile className="size-12 p-2 shadow-black">
@@ -70,6 +74,31 @@ export const projectData: ProjectData[] = [
       </TechTile>,
       <TechTile className="size-12 p-2 shadow-black">
         <Mongodb className="size-full" />
+      </TechTile>,
+    ],
+  },
+  {
+    github: "code-engine-server",
+    title: "Code Engine Server",
+    imgs: ["/code-engine-server/imgs/api-canvas.png"],
+    tech: [
+      <TechTile className="size-12 p-2 shadow-black">
+        <Express className="size-full" />
+      </TechTile>,
+      <TechTile className="size-12 p-2 shadow-black">
+        <Prisma className="size-full" />
+      </TechTile>,
+      <TechTile className="size-12 p-2 shadow-black">
+        <Docker className="size-full" />
+      </TechTile>,
+      <TechTile className="size-12 p-2 shadow-black">
+        <Redis className="size-full" />
+      </TechTile>,
+      <TechTile className="size-12 p-2 shadow-black">
+        <Kafka className="size-full" />
+      </TechTile>,
+      <TechTile className="size-12 p-2 shadow-black">
+        <Zod className="size-full" />
       </TechTile>,
     ],
   },
