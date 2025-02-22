@@ -6,6 +6,7 @@ import { TechPage } from "./components/tech";
 function App() {
   return (
     <>
+      deployed using gh-actions
       <HomePage />
       <TechPage />
       <ProjectsPage />
